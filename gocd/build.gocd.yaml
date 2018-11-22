@@ -1,0 +1,27 @@
+environments:
+  build:
+    pipelines:
+      - brownbag_build
+
+pipelines:
+  brownbag_build:
+    group: BROWNBAG
+    label_template: "${COUNT}"
+    locking: off
+    materials:
+      source:
+        git: http://stash.valepresente.net.br:7990/scm/pocgocd/poc.app.git
+        branch: master
+        auto_update: yes
+        shallow_clone: yes
+    stages:
+      - build:
+          fetch_materials: yes
+          clean_workspace: yes
+          jobs:
+            docker_build:
+              resources:
+                - DOCKER_DEV
+              tasks:
+                - exec:
+                    command: ls
