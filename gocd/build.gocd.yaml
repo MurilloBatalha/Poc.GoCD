@@ -10,7 +10,7 @@ pipelines:
     locking: off
     materials:
       source:
-        git: http://stash.valepresente.net.br:7990/scm/pocgocd/poc.app.git
+        git: ssh://git@stash.valepresente.net.br:7999/pocgocd/poc.app.git
         branch: master
         auto_update: yes
         shallow_clone: yes
