@@ -24,4 +24,6 @@ pipelines:
                 - DOCKER_DEV
               tasks:
                 - exec:
-                    command: ls
+                    command: make
+                    arguments:
+                      - "publish"
