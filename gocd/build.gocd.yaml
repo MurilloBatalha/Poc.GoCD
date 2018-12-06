@@ -10,7 +10,7 @@ pipelines:
     locking: off
     materials:
       source:
-        git: https://github.com/MurilloBatalha/Poc.GoCD.git
+        git: ssh://git@10.7.68.15:7999/pocgocd/poc.app.git
         branch: master
         auto_update: yes
         shallow_clone: yes
