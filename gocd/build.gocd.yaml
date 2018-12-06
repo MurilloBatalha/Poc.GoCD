@@ -1,0 +1,29 @@
+environments:
+  build:
+    pipelines:
+      - app-build
+
+pipelines:
+  app-build:
+    group: Poc-App
+    label_template: "${COUNT}"
+    locking: off
+    materials:
+      source:
+        git: https://github.com/MurilloBatalha/Poc.GoCD.git
+        branch: master
+        auto_update: yes
+        shallow_clone: yes
+    stages:
+      - build:
+          fetch_materials: yes
+          clean_workspace: yes
+          jobs:
+            docker_build:
+              resources:
+                - DOCKER_QA
+              tasks:
+                - exec:
+                    command: make
+                    arguments:
+                      - "publish"
