@@ -10,7 +10,7 @@ namespace Poc.App
             while(true)
             {
                 Console.WriteLine("Hello World!");
-                Thread.Sleep(1000);
+                Thread.Sleep(60000);
             }
         }
     }
