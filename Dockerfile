@@ -10,4 +10,4 @@ RUN dotnet publish -o out
 FROM microsoft/dotnet:runtime
 WORKDIR /app
 COPY --from=build-env /app/out ./
-ENTRYPOINT ["dotnet", "Poc.App.dll"]
+ENTRYPOINT ["dotnet", "PocWeb.dll"]
