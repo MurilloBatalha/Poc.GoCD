@@ -20,8 +20,7 @@ pipelines:
           clean_workspace: yes
           jobs:
             docker_build:
-              resources:
-                - DOCKER_QA
+              elastic_profile_id: "Docker"
               tasks:
                 - exec:
                     command: make
