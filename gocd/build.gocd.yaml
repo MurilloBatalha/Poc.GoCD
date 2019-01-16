@@ -5,7 +5,7 @@ environments:
 
 pipelines:
   app-build:
-    group: Poc-App
+    group: Poc-App-Build
     label_template: "${COUNT}"
     locking: off
     materials:
