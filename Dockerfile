@@ -10,5 +10,5 @@ RUN dotnet publish ./src -o out
 # build runtime image
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
-COPY --from=build-env /app/out ./
+COPY --from=build-env /app/src/out ./
 ENTRYPOINT ["dotnet", "PocWeb.dll"]
