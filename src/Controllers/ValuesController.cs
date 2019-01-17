@@ -25,6 +25,17 @@ namespace PocWeb.Controllers
             return "value";
         }
 
+        [HttpGet("Load")]
+        public ActionResult<string> Load()
+        {
+            var x = 0.0001;
+            for (var i = 0; i <= 1000000; i++) {
+                x += Math.Sqrt(x);
+            }
+
+            return "Done!";
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
